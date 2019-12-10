@@ -2,11 +2,24 @@
 This project contains config files to turn ESLint into a mini Security Scanner for running static analysis on JavaScript to identify bugs and vulnerabilities.
 
 ## Installation
+
+**Global:** <br/>
 ```
 brew install npm
 npm i -g eslint eslint-plugin-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-config-standard eslint-config-semistandard eslint-plugin-scanjs-rules eslint-plugin-no-unsanitized eslint-plugin-prototype-pollution-security-rules eslint-plugin-angularjs-security-rules eslint-plugin-react eslint-plugin-security eslint-plugin-no-wildcard-postmessage
 git clone https://github.com/Greenwolf/eslint-security-scanner-configs
 ```
+
+**Local:** <br/>
+
+Installing `eslint` globally is optional but it will allow us to run `eslint` without depending on the local module.
+
+```
+git clone https://github.com/Greenwolf/eslint-security-scanner-configs
+npm install -g eslint
+npm install
+```
+
 To verify everything is working correcting, run the following to see if you get the expected output
 ```
 $ eslint -c eslintrc-light.js demo.js

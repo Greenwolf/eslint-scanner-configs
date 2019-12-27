@@ -27,8 +27,8 @@
     "type": "git",
     "url": "git+https://github.com/Greenwolf/eslint-security-scanner-configs.git"
   },
-  "author": "Greenwolf", // changeit
-  "license": "ISC",  // changeit
+  "author": "Greenwolf",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Greenwolf/eslint-security-scanner-configs/issues"
   },

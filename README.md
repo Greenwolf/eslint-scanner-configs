@@ -2,11 +2,22 @@
 This project contains config files to turn ESLint into a mini Security Scanner for running static analysis on JavaScript to identify bugs and vulnerabilities.
 
 ## Installation
+
+**Global:** <br/>
 ```
 brew install npm
 npm i -g eslint eslint-plugin-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-config-standard eslint-config-semistandard eslint-plugin-scanjs-rules eslint-plugin-no-unsanitized eslint-plugin-prototype-pollution-security-rules eslint-plugin-angularjs-security-rules eslint-plugin-react eslint-plugin-security eslint-plugin-no-wildcard-postmessage
 git clone https://github.com/Greenwolf/eslint-security-scanner-configs
 ```
+
+**Local:** <br/>
+Installing ESLint globally is optional but it will allow us to run `eslint` without depending on the local module.
+```
+git clone https://github.com/Greenwolf/eslint-security-scanner-configs
+npm install -g eslint
+npm install
+```
+
 To verify everything is working correcting, run the following to see if you get the expected output
 ```
 $ eslint -c eslintrc-light.js demo.js
@@ -19,11 +30,29 @@ $ eslint -c eslintrc-light.js demo.js
 ```
 
 ## Usage 
+Quick usage:
 ```
 cd eslint-security-scanner-configs
 eslint -c eslintrc-light.js ./myjavascript.js
 ```
 
+Leveraging ESLint's command line options:
+```
+eslint -c eslintrc-light.js ./myjavascript.js --no-color --format codeframe --output-file ./eslint-myjavascript.js
+```
+
+For more information please see:
+
+* https://eslint.org/docs/user-guide/command-line-interface
+
+## Troubleshooting
+
+### JavaScript heap out of memory
+Node has run out of memory, download more RAM and assign it as follows:
+
+```
+node --max_old_space_size=4096 ./node_modules/eslint/bin/eslint.js -c eslintrc-light.js ./myjavascript.js
+```
 
 ## Author
 * [**Jacob Wilkin**](https://github.com/Greenwolf) - *Research and Development* - [Trustwave SpiderLabs](https://github.com/SpiderLabs)
